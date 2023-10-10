@@ -8,7 +8,7 @@
 
 3、软件系免费分享，项目也只适用于国外英文项目，请大家勿要在国内瞎搞，出事后果自担。
 
-   QQ:12391046  E-Mail：petersonjames5838@gmail.com
+   QQ：12391046  E-Mail：petersonjames5838@gmail.com
 
 ## 技术相关
 
