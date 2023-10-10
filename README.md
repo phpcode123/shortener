@@ -51,7 +51,7 @@
 
 ## 其它问题
 
-* 如何更改后台登录账号密码？
+### 如何更改后台登录账号密码？
 ~~~
 修改网站配置文件：/shortener/config/app.php    （修改大写字母部分即可）
     'admin_username'         => 'YOUR_ADMIN_USERNAME', //后台用户名
@@ -59,7 +59,7 @@
 ~~~
 
 
-* 如何更改后台登录地址？
+### 如何更改后台登录地址？
 ~~~
 1、先将/shortener/public/admin.php admin.php文件命名为自己想要的 如：loginasadad.php
 2、修改网站配置文件：/shortener/config/app.php    （admin_path地址必须与步骤1修改的一致）如:
