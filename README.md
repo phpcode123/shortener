@@ -34,7 +34,7 @@
 * 伪静态文件目录(只做了Nginx适配)：/shortener/public/.htaccess  内容复制宝塔配置里即可
 * 后台地址：https://yoursite.com/admin.php/login/login  用户名：admin  密码：admin888 (默认用户名和密码)
 
-# 命令行任务
+## 命令行任务
 
 * 相关命令行工具在目录/Shortener/app/command/下,执行php think *  //*号指下列命名，如：php think check_malicious
 ~~~
