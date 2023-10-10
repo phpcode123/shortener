@@ -1,0 +1,28 @@
+{include file='header'}
+
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <span class="card-title">来源查询 </span>
+        </div>
+
+        <div class="card-body">
+            <div class="col-md-5 col-12">
+                <div class="mb-3">
+                    <form method="post" action="/{$admin_path}/referer/querypost">
+                        <label class="form-label page-pretitle">短链查询（请输入short_url字符串便可）</label>
+                        <div class="input-group mb-2">
+                        <input type="text" class="form-control" name="short_str"  placeholder="Search for short_str">
+                        <button class="btn" type="sumbit">Go</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{include file='footer'}

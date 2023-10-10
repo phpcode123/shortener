@@ -1,0 +1,124 @@
+.content-screens-wrapper {
+    display: flex;
+    height: calc(100% - 104px);
+    width: 100%;
+    margin-left: 0px;
+    left:0px;
+}
+
+.content-screens-wrapper>.content-screens {
+    align-items: center;
+    display: flex;
+    margin: 0 auto
+}
+
+@-webkit-keyframes screenshot-anim-d25a4f58 {
+    0% {
+        transform: translateY(-2px)
+    }
+
+    50% {
+        transform: translateY(2px)
+    }
+
+    to {
+        transform: translateY(-2px)
+    }
+}
+
+@keyframes screenshot-anim-d25a4f58 {
+    0% {
+        transform: translateY(-2px)
+    }
+
+    50% {
+        transform: translateY(2px)
+    }
+
+    to {
+        transform: translateY(-2px)
+    }
+}
+
+.content-screens-wrapper>.content-screens>.s-1 {
+    -webkit-animation: screenshot-anim-d25a4f58 4s ease infinite;
+    animation: screenshot-anim-d25a4f58 4s ease infinite;
+    border-radius: 5px;
+    display: block;
+    height: 100px;
+    margin-right: 10px;
+    opacity: .25
+}
+
+.content-screens-wrapper>.content-screens>.s-2 {
+    -webkit-animation: screenshot-anim-d25a4f58 4s ease infinite;
+    animation: screenshot-anim-d25a4f58 4s ease infinite;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+    border-radius: 5px;
+    display: block;
+    height: 130px;
+    margin-right: 10px;
+    opacity: .45
+}
+
+.content-screens-wrapper>.content-screens>.s-3 {
+    -webkit-animation: screenshot-anim-d25a4f58 4s ease infinite;
+    animation: screenshot-anim-d25a4f58 4s ease infinite;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+    border-radius: 5px;
+    display: block;
+    height: 130px;
+    margin-right: 10px;
+    opacity: .45
+}
+
+.content-screens-wrapper>.content-screens>.s-4 {
+    -webkit-animation: screenshot-anim-d25a4f58 4s ease infinite;
+    animation: screenshot-anim-d25a4f58 4s ease infinite;
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+    border-radius: 5px;
+    display: block;
+    height: 100px;
+    opacity: .25
+}
+
+
+
+.content-screens-wrapper>.content-screens>.space {
+    width: 340px
+}
+
+@media screen and (max-width:600px){
+    .margin-top{margin-top:100px;}
+    .search_box{
+        height:200px;
+        background-color: #fff;
+        padding:10px;
+        border-radius: 5px;
+        margin-top: -40px !important;
+        max-width: 100%;
+        position:absolute;
+        z-index:2;
+        top:0px;
+        left:0px;
+    }
+}
+
+@media screen and (min-width:600px){
+    .margin-top{margin-top:250px;}
+    .search_box{
+        height:200px;
+        background-color: #fff;
+        padding:10px;
+        border-radius: 5px;
+        margin-top: -40px !important;
+        max-width: 500px;
+        position:absolute;
+        z-index:2;
+        top:0px;
+        left:calc(50% - 330px);
+    }
+}

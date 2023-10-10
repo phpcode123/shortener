@@ -1,0 +1,59 @@
+{include file='header'}
+
+<div class="col-12">
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">点击数链接列表<span class="page-pretitle">(点击数大于{$hits}的链接列表，用于检查过往漏掉的违规URL。SQL判断条件:where("hits",">",$hits)->where("last_access_timestamp",">",time()-7*24*60*60)->where("adsense_switch","=","0")->where("is_404","=","0")->order('itemid', 'desc'))</span></span>
+    </div>
+    <div class="table-responsive">
+      <table class="table card-table table-vcenter text-nowrap datatable  table-hover">
+        <thead>
+          <tr>
+            <th>itemid</th>
+            <th>edit</th>
+            <th>access_url</th>
+            <th>short_url</th>
+            <th>hits</th>
+            <th>is_404</th>
+            <th>display_ad</th>
+            <th>linkurl_site</th>
+            <th>url</th>
+            <th>country</th>
+            <th>date</th>
+            <th>language</th>
+            <th>is_pc</th>
+            <th>delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          {volist name="list" id="vo" empty="" }
+
+            <tr>
+              <td>{$vo.itemid}</td>
+              <td><a href="/{$admin_path}/shortener/edit?itemid={$vo.itemid}">[=]</a></td>
+              <td>{$vo.access_url}</td>
+              <td><a href="/{$admin_path}/referer/querypost?short_str={$vo.short_url}">{$vo.short_url}</a></td>
+              <td>{$vo.hits}</td>
+              <td>{$vo.is_404}</td>
+              <td>{$vo.display_ad}</td>
+              <td><a href='{$domain_data[$vo.site_id-1]["http_prefix"]}{$domain_data[$vo.site_id-1]["domain_url"]}/{$vo.short_url}' target="_blank">{$domain_data[$vo.site_id-1]["http_prefix"]}{$domain_data[$vo.site_id-1]["domain_url"]}/{$vo.short_url}</a></td>
+              <td style="max-width: 400px;overflow: hidden;"><a href='{$domain_data[$vo.site_id-1]["http_prefix"]}{$domain_data[$vo.site_id-1]["domain_url"]}/{$vo.short_url}' target="_blank">{$vo.url}</a></td>
+              <td style="max-width: 90px;overflow: hidden;">{$vo.country}</td>
+              <td style="max-width: 130px;overflow: hidden;">{$vo.timestamp|date='Y-m-d H:i'}</td>
+              
+              <td style="max-width: 70px;overflow: hidden;">{$vo.accept_language}</td>
+              <td>{$vo.is_pc}</td>
+              <td><a href="/{$admin_path}/shortener/delete?itemid={$vo.itemid}">[X]</a></td>
+            </tr>
+          {/volist}
+
+        </tbody>
+      </table>
+    </div>
+    <div class="card-footer d-flex align-items-center">
+        {$list|raw}
+    </div>
+  </div>
+</div>
+
+{include file='footer'}

@@ -1,0 +1,56 @@
+{include file="/header_1" /}
+<main>
+<section id="content">
+<h1>{$Think.lang.shortener_index_h1}</h1>
+<p>{$Think.lang.shortener_index_description}</p>
+</section>
+<script src="/static/js/clipboard.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/static/layer/layer.js"></script>
+
+<section id="urlbox">
+<br><br>
+<div id="formurl" style="max-width: 400px;">
+<input id="shortenurl" type="text" value="{$short_url}" >
+<div id="formbutton">
+<input type="button" data-clipboard-target="#shortenurl" class="copy"  value="{$Think.lang.shortener_from_button}" data-clipboard-text="{$short_url}" data-clipboard-action="copy">
+</div>
+</div>
+</div>
+<img id="show_qrcode" src="/qrcodeimage.php?qr={$short_url}" width="120" height="120" style="display: block;text-align: center;margin:20px auto 20px;">
+
+<p class="boxtextleft">{$Think.lang.shortener_long_url}: <a href="{$long_url}" target="_blank">{$long_url}</a><br><br>
+
+{$Think.lang.shortener_footer_description}<a href="{$domain_url}url-total-clicks?url={$short_url}"> {$Think.lang.shortener_footer_description_href}</a></a><br>
+
+</p>
+
+
+</section>
+<section id="content">
+<h2><a href="/" class="gohome_text"><< {$Think.lang.shortener_back_home}</a></h2>
+<div class="socialnetworkbox">
+<p>
+
+</p>
+</div>
+</section>
+</main>
+<script type="text/javascript">
+  var clipboard = new ClipboardJS('.copy');
+
+  clipboard.on('success', function(e) {
+      layer.msg("Copied!",{
+        time: 1000, 
+      }
+      );
+  });
+  clipboard.on('error', function(e) {
+
+      layer.open({
+          title: 'Tips',
+          content: 'Your browser may not support it. Please copy it manually.'
+      });
+  });
+
+</script>
+{include file="/footer_1" /}

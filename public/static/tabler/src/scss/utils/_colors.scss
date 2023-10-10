@@ -1,0 +1,31 @@
+// All colors
+@each $color, $value in map-merge($theme-colors, ( white: $white )) {
+  .bg-#{"" + $color} {
+    background-color: var(--#{$prefix}#{$color}) !important;
+  }
+
+  .bg-#{"" + $color}-lt {
+    color: var(--#{$prefix}#{$color}) !important;
+    background-color: rgba(var(--#{$prefix}#{$color}-rgb), .1) !important; //todo
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .text-#{"" + $color} {
+    color: var(--#{$prefix}#{$color}) !important;
+  }
+
+  .text-#{"" + $color}-fg {
+    color: var(--#{$prefix}#{$color}-fg) !important;
+  }
+}
+
+@each $color, $value in $gray-colors {
+  .bg-#{"" + $color} {
+    background-color: var(--#{$prefix}#{$color}) !important;
+  }
+
+  .text-#{"" + $color}-fg {
+    color: color-contrast($value ) !important;
+  }
+}

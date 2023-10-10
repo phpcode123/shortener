@@ -1,0 +1,70 @@
+{include file='header'}
+
+<div class="col-12">
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">视频管理 > 添加Youtube视频<span class="page-pretitle"> (用于伪装广告展示视频页面)</span></span>
+    </div>
+
+    <div class="card-body">
+        <div class="col-sm-12 col-md-10 col-xl-6">
+            <form method="post" action="/{$admin_path}/youtube/addpost">
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">Title(视频标题)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="title"  value="" placeholder="">
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">description (视频描述)</label>
+                    <div class="input-group mb-2">
+                    <textarea class="form-control" rows="6" name="description"  style="height: 150px;"></textarea>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">keyword (关键词)</label>
+                    <div class="input-group mb-2">
+                    <textarea class="form-control" rows="6" name="keyword"  style="height: 150px;"></textarea>
+                    </div>
+                </div>
+
+
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">youtube_url (视频链接)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="youtube_url"  value="" placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">youtube_short_url (youtube的短链url)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="youtube_short_url"  value="" placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">timestamp (时间戳)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="timestamp"  value="<?php echo time();?>" placeholder="">
+                    </div>
+                </div>
+
+
+
+
+                <div class="form-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+  </div>
+</div>
+
+{include file='footer'}

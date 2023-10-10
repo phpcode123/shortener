@@ -1,0 +1,95 @@
+{include file='header'}
+
+<div class="col-12">
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">来源管理 > 编辑</span>
+    </div>
+
+    <div class="card-body">
+        <div class="col-sm-12 col-md-10 col-xl-6">
+            <form method="post" action="/{$admin_path}/referer/editpost">
+                <input type="hidden" name="itemid" value="{$data[0]['itemid']}"/>
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">itemid (数据对应数据库的itemid)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control bg-gray-200" disabled name="itemid"  value="{$data[0]['itemid']}" placeholder="">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">short_str</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control bg-gray-200" disabled name="short_str"  value="{$data[0]['short_str']}" placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">http_referer (来源)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control bg-gray-200" disabled name="http_referer" value="{$data[0]['http_referer']}"  placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">user_agent (客户端UA）</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control bg-gray-200" disabled name="user_agent" value="{$data[0]['user_agent']}"  placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">is_pc (是否是pc端，1为pc，0为移动）</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control bg-gray-200" disabled name="is_pc" value="{$data[0]['is_pc']}"  placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">is_spider (是否是SPIDER端，1为是，0为否）</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control bg-gray-200" disabled name="is_spider" value="{$data[0]['is_spider']}"  placeholder="">
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">user_language (客户端语言）</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control bg-gray-200" disabled name="user_language" value="{$data[0]['user_language']}"  placeholder="">
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">remote_ip (用户远程ip)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="remote_ip" value="{$data[0]['remote_ip']}"  placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">country (国家名称)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="country" value="{$data[0]['country']}"  placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">timestamp (时间戳:{$data[0]['timestamp']|date="Y-m-d H:i:s"}）</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="timestamp" value="{$data[0]['timestamp']}"  placeholder="">
+                    </div>
+                </div>
+
+
+                <div class="form-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+  </div>
+</div>
+
+{include file='footer'}

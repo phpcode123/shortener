@@ -1,0 +1,89 @@
+{include file='header'}
+
+<div class="col-12">
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">黑名单 > 添加规则<span class="page-pretitle"> (主要是针对黑名单域名生成对应的屏蔽正则规则，用户可支付USDT解封)</span></span>
+    </div>
+
+    <div class="card-body">
+        <div class="col-sm-12 col-md-10 col-xl-6">
+            <form method="post" action="/{$admin_path}/black_url/addpost">
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">pattern (正则规则，多个规则可用"|"隔开)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="pattern"  value="" placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">black_url (原始的要屏蔽的黑名单URL)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="black_url"  value="" placeholder="">
+                    </div>
+                </div>
+
+
+                
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">price (需要支付的解封价格)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="price"  value="9.9" placeholder="">
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">pay_time (支付的时间戳)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="pay_time"  value="0" placeholder="">
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">expire_time (支付后的过期时间)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="expire_time"  value="0" placeholder="">
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">notice (页面提示)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="notice"  value="Phishing link" placeholder="">
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">timestamp (当前规则添加时间戳)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="timestamp"  value="<?php echo time();?>" placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">note(备注)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="note"  value="" placeholder="">
+                    </div>
+                </div>
+
+               
+
+               
+
+                <div class="form-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+  </div>
+</div>
+
+{include file='footer'}

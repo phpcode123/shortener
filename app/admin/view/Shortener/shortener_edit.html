@@ -1,0 +1,177 @@
+{include file='header'}
+
+<div class="col-12">
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">短链管理 > 编辑短链 <span class="page-pretitle">(itemid:{$data[0]['itemid']})&nbsp;&nbsp;(<a href="/{$data[0]['short_url']}" target="_blank">点击预览</a>)&nbsp;&nbsp;(<a href="/{$admin_path}/referer/querypost?short_str={$data[0]['short_url']}" target="_blank">查看访问来源</a>)</span></span>
+    </div>
+
+    <div class="card-body">
+        <div class="col-sm-12 col-md-10 col-xl-6">
+            <form method="post" action="/{$admin_path}/shortener/editpost">
+                <input type="hidden" name="itemid" value="{$itemid}"/>
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">itemid (数据对应数据库的itemid)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control bg-gray-200" disabled name="itemid"  value="{$data[0]['itemid']}" placeholder="">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">site_id (站点site_id,域名指定site_id请参照tp_domain中的itemid数据)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control bg-gray-200" disabled name="site_id"  value="{$data[0]['site_id']}" placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">short_url (生成后的短链接，字符串长度为6，三层跳转逻辑详情见:Gotourl.php）<span class="page-pretitle">(<a href="/{$data[0]['short_url']}" target="_blank">点击预览</a>)</span></label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control bg-gray-200" disabled name="short_url" value="{$data[0]['short_url']}"  placeholder="">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">short_url_7 (生成后的短链接,字符串长度为7,三层跳转的第二层）<span class="page-pretitle">(<a href="/{$data[0]['short_url_7']}" target="_blank">点击预览</a>)</span></label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control bg-gray-200" disabled name="short_url_7" value="{$data[0]['short_url_7']}"  placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">short_url_8 (生成后的短链接,字符串长度为8,三层跳转的第三层）<span class="page-pretitle">(<a href="/{$data[0]['short_url_8']}" target="_blank">点击预览</a>)&nbsp;&nbsp;</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control bg-gray-200" disabled name="short_url_8" value="{$data[0]['short_url_8']}"  placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">is_pc (判断是否是PC端UA）</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control bg-gray-200" disabled name="is_pc" value="{$data[0]['is_pc']}"  placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">user_agent (客户端UA）</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control bg-gray-200" disabled name="user_agent" value="{$data[0]['user_agent']}"  placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">accept_language (客户端语言）</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control bg-gray-200" disabled name="accept_language" value="{$data[0]['accept_language']}"  placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">url (目标url)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="url" value="{$data[0]['url']}"  placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">short_from (目标来源：1为来源于首页，2为来源于批量处理，3为Api接口）</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="short_from" value="{$data[0]['short_from']}"  placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">hits (点击数）</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="hits" value="{$data[0]['hits']}"  placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">remote_ip (用户远程ip)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="remote_ip" value="{$data[0]['remote_ip']}"  placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">country (国家名称)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="country" value="{$data[0]['country']}"  placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">timestamp (时间戳，日期: {$data[0]['timestamp']|date="Y-m-d H:i:s"})</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="timestamp" value="{$data[0]['timestamp']}"  placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">middle_page (是否展示中间页，1为展示，0为不展示，默认为1)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="middle_page" value="{$data[0]['middle_page']}"  placeholder="">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">allow_spider_jump (否允许蜘蛛或爬虫是否自动跳转，1为跳转，0时只要是蜘蛛访问直接404，用户正常显示(不想删除链接而google又警示时就设置为0)，默认为1)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="allow_spider_jump" value="{$data[0]['allow_spider_jump']}"  placeholder="">
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">is_404 (1为直接展示404页面,用户和蜘蛛都不能访问,凡是违规url直接设置为1，让网页返回404错误，避免网络上的审查程序自动化提交（已经处理很久的url突然就被重新审核了，应该是爬虫所致），0为正常展示，默认为0.)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="is_404" value="{$data[0]['is_404']}"  placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">display_ad (gotourl页面是否显示广告，0为不显示或者显示自身品牌广告，1为显示google adsense, 2为显示affilist.com广告)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="display_ad" value="{$data[0]['display_ad']}"  placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">status (状态码,默认为1,0为不可访问,当值为0时会跳转到/error_page上，并做相关提示。)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="status" value="{$data[0]['status']}" placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">redis_index (是否将数据库缓存在redis中,1为已经缓存,0为未缓存,默认为0)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="redis_index" value="{$data[0]['redis_index']}"  placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">check_malicious_status (检查是否是恶意url，0为未检查，1为已检查(先将URl去google官方的恶意链接检测(index/console/check_malicious)，检测过的URL设置为1，如果是恶意url脚本会自动将is_404设置为9，如果不是则进行下一步，使用控制器index/console/check_malicious_2_local来检查,嫌疑链接值为9,访问异常值为8，没有问题则为7进入人工手动筛选环节)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control bg-gray-200" name="check_malicious_status" value="{$data[0]['check_malicious_status']}"  placeholder="">
+                    </div>
+                </div>
+
+            
+
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">youtube_url_itemid (对应tp_youtube_url的itemid，随机值，gotourl.php逻辑部分会自动处理)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="youtube_url_itemid" value="{$data[0]['youtube_url_itemid']}"  placeholder="">
+                    </div>
+                </div>
+
+                <div class="form-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+  </div>
+</div>
+
+{include file='footer'}

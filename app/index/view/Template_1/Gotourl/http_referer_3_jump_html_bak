@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>wait...</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+<link rel="bookmark" type="image/x-icon" href="/favicon.ico"/>
+<script type="text/javascript" src="/static/js/jQuery.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css" />
+
+
+<style>
+/*global*/
+* {word-break:break-all;font-family:Verdana,\5FAE\8F6F\96C5\9ED1,Arial;-webkit-text-size-adjust:none;border: none;background: none;padding:0px;margin:0px;border-radius: 0px;}/*"Microsoft Yahei",*/
+html,body {margin:0;padding:0px;font-size:12px;color:#333333;background:#F3F3F3;height:100%;width: 100%;}
+a{cursor:pointer;text-decoration: none;}
+
+
+.clear{clear: both;}
+.container_box{margin:5px auto;box-shadow:0px 3px 4px 0px #e3e3e3;background:#fff;border-radius: 20px;}
+
+.title{height: 80px;line-height: 80px;width: 100%;text-align: center;margin-top: 10px;margin-bottom: 10px;color:#109fe5;}
+.title p{font-size: 26px;font-weight: bold;text-align: center;width:100%;}
+.title_warning{height: 40px;line-height: 40px;width: 100%;text-align: center;margin-top: 10px;margin-bottom: 10px;color:#ffc107;}
+.title_warning p{font-size: 26px;font-weight: bold;text-align: center;width:100%;}
+
+@media all and (max-width:576px){
+    .title{height: 80px;line-height: 80px;width: 100%;text-align: center;margin-top: 5px;margin-bottom: 5px;color:#109fe5;}
+    .title p{font-size: 18px;font-weight: bold;text-align: center;width:100%;}
+    .title_warning{height: 40px;line-height: 40px;width: 100%;text-align: center;margin-top: 5px;margin-bottom:5px;color:#ffc107;}
+    .title_warning p{font-size: 22px;font-weight: bold;text-align: center;width:100%;}
+}@media all and (min-width:576px) and (max-width:769px){
+    .title{height: 80px;line-height: 80px;width: 100%;text-align: center;margin-top: 10px;margin-bottom: 10px;color:#109fe5;}
+    .title p{font-size: 26px;font-weight: bold;text-align: center;width:100%;}
+    .title_warning{height: 40px;line-height: 40px;width: 100%;text-align: center;margin-top: 10px;margin-bottom: 10px;color:#ffc107;}
+    .title_warning p{font-size: 26px;font-weight: bold;text-align: center;width:100%;}
+
+
+}
+
+.sleeptime{max-width:640px;width:90%;height:50px;margin:5px auto;border:none;border-radius: 5px;color:#fff;}
+.sleeptime p{font-size: 18px;line-height:50px;text-align: center;text-decoration: none;color: #fff;}
+.sleeptime a{font-size: 18px;line-height:50px;text-decoration: none;color: #fff;}
+
+.gohome{max-width:640px;width:90%;height:50px;margin:5px auto;border:none;border-radius: 5px;}
+.gohome p{text-align: center;}
+.gohome a{font-size: 18px;line-height:50px;text-decoration: none;color: #fff;}
+.gohome a:hover{color: #bebebe;}
+
+
+.brline{height:0px;border-top:2px solid #999;width:90%;margin:5px auto;}
+.description{height:auto;line-height:24px;font-size:16px;width:90%;margin:5px auto;text-align: center;}
+.description p{word-break:normal;word-wrap:break-word;}
+
+.google_pc_top_ad{min-height:40px;height:auto;}
+.google_pc_bottom_ad{min-height:40px;height:auto;}
+
+.fl{float:left;}
+.fr{float:right;}
+.mt10{margin-top:10px;}
+.mt15{margin-top:15px;}
+.mt20{margin-top:20px;}
+.mt30{margin-top:30px;}
+.mt40{margin-top:40px;}
+.mt50{margin-top:50px;}
+.mt60{margin-top:60px;}
+.mt70{margin-top:70px;}
+.mt80{margin-top:80px;}
+.mt90{margin-top:90px;}
+.mt100{margin-top:100px;}
+.mt150{margin-top:150px;}
+.mt200{margin-top:200px;}
+.mt250{margin-top:150px;}
+.mt300{margin-top:300px;}
+.mb10{margin-bottom:10px;}
+.mb15{margin-bottom:15px;}
+.mb20{margin-bottom:20px;}
+.mb30{margin-bottom:30px;}
+.mb40{margin-bottom:40px;}
+.mb50{margin-bottom:50px;}
+.mb60{margin-bottom:60px;}
+.mb70{margin-bottom:70px;}
+.mb80{margin-bottom:80px;}
+.mb90{margin-bottom:90px;}
+.mb100{margin-bottom:100px;}
+.mb150{margin-bottom:150px;}
+.mb200{margin-bottom:200px;}
+.mb250{margin-bottom:250px;}
+.mb300{margin-bottom:300px;}
+.m1200{max-width: 1200px !important;}
+.m640{max-width: 640px !important;}
+.m360{max-width: 360px !important;}
+
+.ad_box320{display: block;min-width:300px;max-width: 320px;margin: 5px auto;}
+.ad_box{display: block;min-width:300px;max-width: 98%;margin: 5px auto;min-height: 300px;}
+.ad_box_h100{display: block;min-width:300px;max-width: 98%;margin: 5px auto;max-height: 100px !important;}
+.m100 {max-height: 120px !important;min-height:100px !important;}
+
+.font_box{display: none;}
+.click_bg{background-color: green !important;}
+.copyright{font-size: 16px;text-align: center;height: 20px;line-height: 20px;}
+.copyright a{color:#999;}
+</style>
+</head>
+<body>
+
+<div class="container m640">
+
+    <div class="row  container_box mt10 d-none">
+        <div class="col">
+
+            <div class="row">
+                <div class="col">
+                    <div class="title"><p>YOUR LINK IS ALMOST READY.</p></div>
+                </div>
+            </div>
+
+
+            <div class="row mt200 mb50">
+                <div class="col">
+                    <div class="sleeptime bg-dark"><p id="click">Please wait <b id="wait">0</b> seconds</p></div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+<div class="font_box"><a id="href" href="{$redirect_url|raw}"></a></div>
+
+
+<script type="text/javascript">
+    (function(){
+        var auto_jump_num = 1;
+        var wait = document.getElementById('wait'),
+            href = document.getElementById('href').href;
+        var interval = setInterval(function(){
+            var time = --wait.innerHTML;
+            if(time <= 0) {
+                if(auto_jump_num == 1){
+                    location.href = href;
+                    clearInterval(interval);
+                }else{
+                    clearInterval(interval);
+                    $(document).ready(function(){
+                        var new_time = 1;
+                        var interval = setInterval(function(){
+                            new_time -= 1;
+                            
+                            if(new_time <= 0) {
+                                location.href = href;
+                                clearInterval(interval); 
+                            };
+                        }, 1000);
+                    });
+                }
+                
+
+            };
+        }, 1000);
+    })();
+</script>
+
+</body>
+</html>

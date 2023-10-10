@@ -1,0 +1,134 @@
+{include file="/header_1" /}
+
+<main>
+<section id="urlbox">
+<h3>{$Think.lang.index_h3}</h3>
+<div class="index_h1_box"></div>
+<form action="/shortener" name="form" method="post" onSubmit="return beforeSubmit(this);">
+    <div class="form_box">
+        <div class="error_notice" style="display:none;"></div>
+            <div id="formurl">
+                <input type="text" name="hash_str" value="" id="hash_str" style="display: none;">
+                <input type="text" name="url" id="url" value="" placeholder="{$Think.lang.index_search_box_input}">
+                <div id="formbutton">
+            <input type="submit" value="{$Think.lang.index_search_box_button}">
+            </div>
+        </div>
+
+        <div class="check_site_id">
+            <ul>
+                <li>
+                    <span class="check_site_id_span_one">{$Think.lang.index_customize_link_pc}</span>
+                    <span class="check_site_id_span_two">{$Think.lang.index_customize_link_m}</span>
+                </li>
+                {volist name="customize_data" id="vo"}
+                <li>
+                    <input type="radio" name="check_site_id" value="{$vo.itemid}"  {if $vo.is_checked eq 1}checked{/if}>
+                    <span>{$vo.domain_url}</span>
+                </li>
+                {/volist}
+                <div class="clear"></div>
+                
+            </ul>
+        </div>
+    </div>
+</form>
+<p class="boxtextcenter">{$Think.lang.index_description|raw}</p>
+</section>
+
+
+<section id="emailbox">
+    <h2>{$Think.lang.index_batch_shortener_tool_description|raw}</h2>
+<br/>
+<a href="/shortener-batch" class="colorbutton">{$Think.lang.index_batch_shortener_tool_button}</a>
+<br/>
+<br/>
+ </section>
+
+
+ <div class="index_analysis_box">
+    <div class="index_analysis">
+        <div class="header">
+            <p>{$Think.lang.index_total_clicks}</p>
+            
+        </div>
+        <div class="body">
+            <span class="text-success">{$total_clicks}</span>
+        </div>
+
+    </div>
+    <div class="index_analysis index_fl">
+        <div class="header">
+            <p>{$Think.lang.index_total_links}</p>
+        </div>
+        <div class="body">
+            <span class="text-purple">{$total_links}</span>
+        </div>
+    </div>
+    <div class="index_analysis index_fl">
+        <div class="header">
+            <p>{$Think.lang.index_links_today}</p>
+        </div>
+        <div class="body">
+            <span class="text-info">{$links_today}</span>
+        </div>
+    </div>
+<div class="clear"></div>
+</div>
+
+{if $index_display_user_cookies_data eq 1}
+    {if $cookie_data_count_num gt 0}
+    <div class="index_history_click_box">
+        <ul class="index_click_box_ul" style="margin-top: -2px;">
+            <li class="w100"><p>Click Counter {if $cookie_data_count_num gt 2 && $cookie_data_total_clicks gt 50 }(Total: {$cookie_data_total_clicks}){/if}</p></li>
+        </ul>
+        <ul class="index_click_box_ul">
+            <li class="w30"><p>Shorten URL</p></li>
+            <li class="w10"><p>Click</p></li>
+            <li class="w58"><p>Long URL</p></li>
+        </ul>
+
+        {volist name="cookie_data" id="vo"}
+
+        <ul class="index_click_box_ul">
+            <li class="w30"><input value='{$domain_data[$vo.site_id-1]["http_prefix"]}{$domain_data[$vo.site_id-1]["domain_url"]}/{$vo.short_url}'/></li>
+            <li class="w10"><p>{$vo.hits}</p></li>
+            <li class="w58"><input value="{$vo.url}" class="tl"/></li>
+        </ul>
+        {/volist}
+        
+    </div>
+    {/if}
+{/if}
+
+</main>
+<script type="text/javascript" src="/static/js/5e20e1e5ddc34269647ce58a762859e5.js"></script>
+<script language="javascript">
+    timestamp("{$index_timestamp}");
+</script>
+<script type="text/javascript">
+    
+    function show_notice(){
+        $(".error_notice").toggle(100);
+        $(".error_notice").html("<p>URL error, Please check it.</p>");
+        $(".error_notice").toggle(100);
+    }
+
+    function beforeSubmit(form){
+        if($("#url").val().length < 4){
+            show_notice();
+
+            form.url.focus();
+            return false;
+        } 
+    }
+</script>
+
+<!--Just for m5.gs Google adsense verify-->
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3990017143487269"
+crossorigin="anonymous"></script>
+
+
+
+{include file="/footer_1" /}

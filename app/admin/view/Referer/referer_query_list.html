@@ -1,0 +1,53 @@
+{include file='header'}
+
+<div class="col-12">
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">来源管理 > 来源列表 </span>
+    </div>
+    <div class="table-responsive">
+      <table class="table card-table table-vcenter text-nowrap datatable  table-hover">
+        <thead>
+          <tr>
+            <th>itemid</th>
+            <th>edit</th>
+            <th>short_str</th>
+            <th>http_prefix</th>
+            <th>user_agent</th>
+            <th>is_pc</th>
+            <th>is_spider</th>
+            <th>accept_language</th>
+            <th>remote_ip</th>
+            <th>country</th>
+            <th>datetime</th>
+            <th>delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          {volist name="list" id="vo" empty="" }
+            <tr>
+              <td>{$vo.itemid}</td>
+              <td><a href="/{$admin_path}/referer/edit?itemid={$vo.itemid}">[=]</a></td>
+              <td><a href="/{$admin_path}/shortener/querypost?short_str={$vo.short_str}">{$vo.short_str}</a></td>
+              <td style="max-width:200px;overflow: hidden;">{$vo.http_referer}</td>
+              <td style="max-width:380px;overflow: hidden;">{$vo.user_agent}</td>
+              <td>{$vo.is_pc}</td>
+              <td>{$vo.is_spider}</td>
+              <td style="max-width:100px;overflow: hidden;">{$vo.user_language}</td>
+              <td style="max-width:150px;overflow: hidden;">{$vo.remote_ip}</td>
+              <td style="max-width: 80px;overflow: hidden;">{$vo.country}</td>
+              <td>{$vo.timestamp|date='Y-m-d H:i:s'}</td>
+              <td><a href="/{$admin_path}/referer/delete?itemid={$vo.itemid}">[X]</a></td>
+            </tr>
+          {/volist}
+
+        </tbody>
+      </table>
+    </div>
+    <div class="card-footer d-flex align-items-center">
+        {$list|raw}
+    </div>
+  </div>
+</div>
+
+{include file='footer'}

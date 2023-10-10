@@ -1,0 +1,16 @@
+$select-color-dropdown-border-top: red;
+
+@import "~tom-select/src/scss/tom-select.bootstrap5.scss";
+
+.ts-input {
+  color: inherit;
+}
+
+.ts-control{
+  color: inherit;
+
+  .dropdown-menu {
+    width: 100%;
+    height: auto;
+  }
+}

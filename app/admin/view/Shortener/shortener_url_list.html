@@ -1,0 +1,64 @@
+{include file='header'}
+
+<div class="col-12">
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">短链管理 > 原始链接列表 <span class="page-pretitle">（方便查看原始的URL链接）php think check_malicious:{if ($now_timestamp-$malicious_url_status_time) lt 1000}Running{else}Stop{/if}</span></span>
+    </div>
+    <div class="table-responsive">
+      <table class="table card-table table-vcenter text-nowrap datatable  table-hover">
+        <thead>
+          <tr>
+            <th>itemid</th>
+            <th>edit</th>
+            <th>access_url</th>
+            <th>hits</th>
+            <th>is_404</th>
+            <th>display_ad</th>
+            <th>linkurl_site</th>
+            <th>linkurl</th>
+            <th>remote_ip</th>
+            <th>country</th>
+            <th>date</th>
+            <th>last_date</th>
+            <th>language</th>
+            <th>is_pc</th>
+            <th>status</th>
+            <th>redis_index</th>
+            <th>delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          {volist name="list" id="vo" empty="" }
+
+            <tr>
+              <td>{$vo.itemid}</td>
+              <td><a href="/{$admin_path}/shortener/edit?itemid={$vo.itemid}">[=]</a></td>
+              <td>{$vo.access_url}</td>
+              <td>{$vo.hits}</td>
+              <td>{$vo.is_404}</td>
+              <td>{$vo.display_ad}</td>
+              <td><a href='{$domain_data[$vo.site_id-1]["http_prefix"]}{$domain_data[$vo.site_id-1]["domain_url"]}/{$vo.short_url}' target="_blank">{$domain_data[$vo.site_id-1]["http_prefix"]}{$domain_data[$vo.site_id-1]["domain_url"]}/{$vo.short_url}</a></td>
+              <td style="max-width: 400px;overflow: hidden;"><a href='{$domain_data[$vo.site_id-1]["http_prefix"]}{$domain_data[$vo.site_id-1]["domain_url"]}/{$vo.short_url}' target="_blank">{$vo.url}</a></td>
+              <td style="max-width: 110px;overflow: hidden;">{$vo.remote_ip}</td>
+              <td style="max-width: 150px;overflow: hidden;">{$vo.country}</td>
+              <td>{$vo.timestamp|date='Y-m-d H:i'}</td>
+              <td>{if $vo.last_access_timestamp eq 0}None{else}{$vo.last_access_timestamp|date='Y-m-d H:i'}{/if}</td>
+              <td style="max-width: 70px;overflow: hidden;">{$vo.accept_language}</td>
+              <td>{$vo.is_pc}</td>
+              <td>{$vo.status}</td>
+              <td>{$vo.redis_index}</td>
+              <td><a href="/{$admin_path}/shortener/delete?itemid={$vo.itemid}">[X]</a></td>
+            </tr>
+          {/volist}
+
+        </tbody>
+      </table>
+    </div>
+    <div class="card-footer d-flex align-items-center">
+        {$list|raw}
+    </div>
+  </div>
+</div>
+
+{include file='footer'}

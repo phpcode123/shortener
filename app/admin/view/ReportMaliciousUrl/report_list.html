@@ -1,0 +1,47 @@
+{include file='header'}
+
+<div class="col-12">
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">投诉列表 <span class="page-pretitle">(<a href="/{$admin_path}/report_malicious_url/list?status=1" >已处理列表</a>)</span></span>
+    </div>
+    <div class="table-responsive">
+      <table class="table card-table table-vcenter text-nowrap datatable  table-hover">
+        <thead>
+          <tr>
+            <th>itemid</th>
+            <th>edit</th>
+            <th>status</th>
+            <th>date</th>
+            <th>url</th>
+            <th>remote_ip</th>
+            <th>country</th>
+            <th>comment</th>
+            <th>delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          {volist name="list" id="vo" empty="" }
+            <tr>
+              <td>{$vo.itemid}</td>
+              <td><a href="/{$admin_path}/report_malicious_url/edit?itemid={$vo.itemid}">[=]</a></td>
+              <td>{$vo.status}</td>
+              <td>{$vo.timestamp|date='Y-m-d H:i'}</td>
+              <td style="max-width:300px;overflow:hidden;">{$vo.url}</td>
+              <td style="max-width:150px;overflow:hidden;">{$vo.remote_ip}</td>
+              <td style="max-width:150px;overflow:hidden;">{$vo.country}</td>
+              <td style="max-width:300px;overflow:hidden;">{$vo.comment}</td>
+              <td><a href="/{$admin_path}/report_malicious_url/delete?itemid={$vo.itemid}">[X]</a></td>
+            </tr>
+          {/volist}
+
+        </tbody>
+      </table>
+    </div>
+    <div class="card-footer d-flex align-items-center">
+        {$list|raw}
+    </div>
+  </div>
+</div>
+
+{include file='footer'}

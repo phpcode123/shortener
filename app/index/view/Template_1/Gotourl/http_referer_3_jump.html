@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>wait...</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+</head>
+<body>
+
+<div class="container m640">
+
+    <div class="row  container_box mt10 d-none">
+        <div class="col">
+
+            <div class="row">
+                <div class="col">
+                    <div class="title" style="display:none;"><p>YOUR LINK IS ALMOST READY.</p></div>
+                </div>
+            </div>
+
+
+            <div class="row mt200 mb50">
+                <div class="col">
+                    <div class="sleeptime bg-dark" style="display:none;"><p id="click">Please wait <b id="wait">0</b> seconds</p></div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+<div class="font_box"><a id="href" href="{$redirect_url|raw}"></a></div>
+
+
+<script type="text/javascript">
+
+        var href = document.getElementById('href').href;
+        location.href = href;
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>{$youtube_title|raw}</title>
+    <meta name="keywords" content="{$youtube_keyword|raw}"/>
+	<meta name="description" content="{$youtube_description|raw}"/>
+    <link rel="stylesheet" type="text/css" href="/static/tabler/dist/css/tabler.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/tabler/dist/css/tabler-flags.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/tabler/dist/css/tabler-payments.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/tabler/dist/css/tabler-vendors.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/roblox.css" />
+    <script type="text/javascript" src="/static/tabler/dist/js/tabler.min.js"></script>
+
+  </head>
+  <body  style="max-width: 1280px;overflow-x: hidden;margin:0 auto;">
+  <div class="page">
+
+    <header class="navbar navbar-expand-md navbar-light d-print-none ">
+      <div class="container-xl">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
+          <a href="/">
+            <img src="/static/tabler/static/roblox.svg" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+          </a>
+        </h1>
+        <div class="navbar-nav flex-row order-md-last">
+          <div class="nav-item d-none d-md-flex me-3">
+            <div class="btn-list">
+              <a href="/landing" class="btn" rel="noreferrer">
+                Become Publisher 
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-xl">
+        <!-- <div class="row">
+            <div class="col-md-12 col-lg-12 ">
+                
+            </div>
+        </div> -->
+
+
+        <div class="row">
+          <div class="col-md-12 col-lg-8  mt-3">
+            <div class="card">
+                
+                <div class="card-body">
+                    <h3 class="fw-bolder text-muted page-pretitle">TITLE</h3>
+                    <h1 class="fw-bolder">{$youtube_title|raw}</h1>
+                    <h3 class="fw-bolder text-muted page-pretitle">DESCRIPTION</h3>
+                    <p>{$youtube_description|raw}</p>
+                    <h3 class="fw-bolder text-muted page-pretitle">YOUTUBE VIDEO</h3>
+                    <iframe width="100%" height="400" src="https://www.youtube.com/embed/{$youtube_short_url|raw}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    
+                
+                </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-lg-4  mt-3">
+            <div class="card">
+              <div class="card-body">
+                <!--google adsense code-->
+                {$adsense_host_data[0]['adsense_code']|raw}
+              </div>
+            </div>
+
+
+            
+              
+
+
+        
+
+          </div>
+        </div>
+
+        <div class="row">
+          
+            {volist name="roblox_recom_data" id="vo"}
+              <div class="col-md-4 col-lg-4  mt-3">
+                <div class="card card-sm ">
+                  <a href="/{$vo.youtube_short_url|raw}" class="d-block"><img src="https://i.ytimg.com/vi/{$vo.youtube_short_url|raw}/hqdefault.jpg" class="card-img-top"></a>
+                    <div class="d-flex align-items-center">
+                      <div>
+                        <div class="px-2">{$vo.title|raw|substr=0,40}</div>
+                        <div class="px-2 text-muted">{$vo.description|raw|substr=0,40}</div>
+                      </div>
+                      
+                    </div> 
+                </div>
+              </div>
+            {/volist}
+            
+        
+        </div>
+
+      </div>
+
+
+  </div>
+
+
+  <footer class="footer footer-transparent d-print-none">
+    <div class="container-xl">
+      <div class="row text-center align-items-center flex-row-reverse">
+        <div class="col-lg-auto ms-lg-auto">
+          <ul class="list-inline list-inline-dots mb-0">
+  
+            
+
+
+            <li class="list-inline-item"><a href="/contact-us" class="link-secondary">Contact us</a></li>
+            
+          </ul>
+        </div>
+        <div class="col-12 col-lg-auto mt-3 mt-lg-0">
+          <ul class="list-inline list-inline-dots mb-0">
+            <li class="list-inline-item">
+              Copyright © 2023
+              <a href="/" class="link-secondary">Roblox Gamer Center</a>.
+              All rights reserved.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+@mixin subheader($include-color: true, $include-line-height: true) {
+  font-size: $h6-font-size;
+  font-weight: var(--#{$prefix}font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+
+  @if $include-line-height {
+    line-height: $h6-line-height;
+  }
+
+  @if ($include-color) {
+    color: var(--#{$prefix}muted);
+  }
+}
+
+@mixin scrollbar($color: var(--#{$prefix}body-color-rgb)) {
+  #{if(&, "&", "*")}::-webkit-scrollbar {
+    width: .5rem;
+    height: .5rem;
+    @include transition(background $transition-time);
+  }
+
+  #{if(&, "&", "*")}::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: rgba($color, .16);
+  }
+
+  #{if(&, "&", "*")}::-webkit-scrollbar-track {
+    background: rgba($color, .06);
+  }
+
+  #{if(&, "&", "*")}:hover::-webkit-scrollbar-thumb {
+    background: rgba($color, .32);
+  }
+
+  #{if(&, "&", "*")}::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
+
+
+@mixin autodark-image {
+  filter: brightness(0) invert(1);
+}
+
+@mixin dark-mode {
+  @if $enable-dark-mode {
+    $selector: &;
+
+    @media not print {
+      @if ($selector) {
+        .theme-dark & {
+          @content
+        }
+      } @else {
+        .theme-dark {
+          @content
+        }
+      }
+    }
+
+    @media not print {
+      @media (prefers-color-scheme: dark) {
+        @if ($selector) {
+          .theme-dark-auto & {
+            @content
+          }
+        } @else {
+          .theme-dark-auto {
+            @content
+          }
+        }
+      }
+    }
+  }
+}
+
+//
+// Button ghost
+//
+@mixin button-ghost-variant(
+  $color,
+  $color-hover: color-contrast($color),
+  $active-background: $color,
+  $active-border: $color,
+  $active-color: color-contrast($active-background)
+) {
+  --#{$prefix}btn-color: #{$color};
+  --#{$prefix}btn-bg: transparent;
+  --#{$prefix}btn-border-color: transparent;
+  --#{$prefix}btn-hover-color: #{$color-hover};
+  --#{$prefix}btn-hover-bg: #{$active-background};
+  --#{$prefix}btn-hover-border-color: #{$active-border};
+  --#{$prefix}btn-focus-shadow-rgb: #{to-rgb($color)};
+  --#{$prefix}btn-active-color: #{$active-color};
+  --#{$prefix}btn-active-bg: #{$active-background};
+  --#{$prefix}btn-active-border-color: transparent;
+  --#{$prefix}btn-active-shadow: #{$btn-active-box-shadow};
+  --#{$prefix}btn-disabled-color: #{$color};
+  --#{$prefix}btn-disabled-bg: transparent;
+  --#{$prefix}btn-disabled-border-color: transparent;
+  --#{$prefix}gradient: none;
+  --#{$prefix}btn-box-shadow: none;
+}
+
+//
+// Elements list
+//
+@mixin elements-list($gap: .5rem) {
+  --#{$prefix}list-gap: #{$gap};
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--#{$prefix}list-gap);
+}

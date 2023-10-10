@@ -1,0 +1,131 @@
+{include file='header'}
+
+<div class="col-12">
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">域名管理 > 编辑域名<span class="page-pretitle">(注意 checked状态的域名只能设置一个，否则前端input标签会出现多个checked选择域名，会导致出现问题)</span></span>
+    </div>
+
+    <div class="card-body">
+        <div class="col-sm-12 col-md-10 col-xl-6">
+            <form method="post" action="/{$admin_path}/domain/editpost">
+                <input type="hidden" name="itemid" value="{$data[0]['itemid']}"/>
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">itemid (数据对应数据库的itemid)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control bg-gray-200" disabled name="itemid"  value="{$data[0]['itemid']}" placeholder="">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">http_prefix (如:https:// 此类站点必须强制全部https化)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="http_prefix"  value="{$data[0]['http_prefix']}" placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">domain_url (如:baidu.com 不要https前缀 ,不要以/结尾，最好不带www)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="domain_url"  value="{$data[0]['domain_url']}" placeholder="">
+                    </div>
+                </div>
+
+
+                
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">site_name (用于全站调用)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="site_name"  value="{$data[0]['site_name']}" placeholder="">
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">index_title (首页标题)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="index_title"  value="{$data[0]['index_title']}" placeholder="">
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">index_keyword (首页关键词)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="index_keyword"  value="{$data[0]['index_keyword']}" placeholder="">
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">index_description (首页描述)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="index_description"  value="{$data[0]['index_description']}" placeholder="">
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">display_ad (是否显示页面广告 1为显示，0为不显示，数据库默认值为1)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="display_ad"  value="{$data[0]['display_ad']}" placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">is_customize (是否允许用户自定义域名 1为设置为自定义，0为不设置，数据库默认值为0。此数字越大，首页自定义URL排序越靠前)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="is_customize"  value="{$data[0]['is_customize']}" placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">is_checked (是否允许用户自定义域名，默认checked状态 1为checked，0为否，数据库默认值为0)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="is_checked"  value="{$data[0]['is_checked']}" placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">sitemap (是否生成sitemap，1为生成，0为不生成(点击后台的网站地图进行生成，txt文件在public目录下))</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="sitemap"  value="{$data[0]['sitemap']}" placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">template_num (当前域名调用的模板编号，默认从1开始，数据库默认值为1，按实际需求填)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="template_num"  value="{$data[0]['template_num']}" placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">roblox_index (用于跳转中间页展示google adsense广告，当值为1时使用roblox_index当首页模板，0时使用shortener的首页，默认为0。设置为1时必须要在adsense广告域名(tp_adsense表)中添加此域名，并将tp_adsense表项adsense_switch值设置为1)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="roblox_index"  value="{$data[0]['roblox_index']}" placeholder="">
+                    </div>
+                </div>
+
+                
+                <div class="mb-3">
+                    <label class="form-label page-pretitle">note (域名特殊情况备注，正常留空。)</label>
+                    <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="note"  value="{$data[0]['note']}" placeholder="">
+                    </div>
+                </div>
+
+
+
+               
+
+                <div class="form-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+  </div>
+</div>
+
+{include file='footer'}
