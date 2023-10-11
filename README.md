@@ -31,7 +31,7 @@
 ...
 ~~~
 
-* MySql安装配置好后在MySql界面插入两行数据(此程序为多域名版本，认域名，将第一行中的192.168.0.5:8088改为自己的主域)
+* MySql安装配置好后在MySql界面插入两行数据(此程序为多域名版本，认域名。将第一行中的192.168.0.5:8088改为自己的主域，多域名自己在后台添加)
 ~~~
 INSERT INTO `tp_domain` VALUES("https://","192.168.0.5:8088/","Test_title","Index_title","Index_keyword","Index_description");
 
