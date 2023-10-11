@@ -31,6 +31,16 @@
 ...
 ~~~
 
+* MySql安装配置好后在MySql界面插入两行数据(此程序为多域名版本，认域名，将192.168.0.5:8088改为自己的主域)
+~~~
+insert into `tp_domain` VALUES("https://","192.168.0.5:8088/","Test_title","Index_title","Index_keyword","Index_description");
+
+INSERT INTO `tp_shortener` VALUES (1,'',1,'','V0N6UU','dEZMRlh','bU5ia3E0','https://www.baidu.com/',0,5,'172.68.253.65','',1648795566,0,1,0,'','',1,0,1,1,1,2,0);
+~~~
+
+
+
+
 * 伪静态文件目录(只做了Nginx适配)：/shortener/public/.htaccess  内容复制宝塔配置里即可
 * 后台地址：https://yoursite.com/admin.php/login/login  用户名：admin  密码：admin888 (默认用户名和密码)
 

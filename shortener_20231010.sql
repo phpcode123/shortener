@@ -274,6 +274,8 @@ CREATE TABLE `tp_shortener` (
 -- Table structure for table `tp_youtube_url`
 --
 
+
+
 DROP TABLE IF EXISTS `tp_youtube_url`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
