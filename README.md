@@ -35,7 +35,7 @@
 ~~~
 INSERT INTO `tp_domain` VALUES("https://","192.168.0.5:8088/","Test_title","Index_title","Index_keyword","Index_description");
 
-INSERT INTO `tp_shortener` VALUES (1,'',1,'','V0N6UU','dEZMRlh','bU5ia3E0','https://www.baidu.com/',0,5,'172.68.253.65','',1648795566,0,1,0,'','',1,0,1,1,1,2,0);
+INSERT INTO `tp_shortener` VALUES (1,'',1,'','V0N6UU','dEZMRlh','bU5ia3E0','https://www.baidu.com/',0,5,'1.1.1.1','',1648795566,0,1,0,'','',1,0,1,1,1,2,0);
 ~~~
 
 
