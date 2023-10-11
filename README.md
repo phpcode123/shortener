@@ -31,9 +31,9 @@
 ...
 ~~~
 
-* MySql安装配置好后在MySql界面插入两行数据(此程序为多域名版本，认域名，将192.168.0.5:8088改为自己的主域)
+* MySql安装配置好后在MySql界面插入两行数据(此程序为多域名版本，认域名，将第一行中的192.168.0.5:8088改为自己的主域)
 ~~~
-insert into `tp_domain` VALUES("https://","192.168.0.5:8088/","Test_title","Index_title","Index_keyword","Index_description");
+INSERT INTO `tp_domain` VALUES("https://","192.168.0.5:8088/","Test_title","Index_title","Index_keyword","Index_description");
 
 INSERT INTO `tp_shortener` VALUES (1,'',1,'','V0N6UU','dEZMRlh','bU5ia3E0','https://www.baidu.com/',0,5,'172.68.253.65','',1648795566,0,1,0,'','',1,0,1,1,1,2,0);
 ~~~
