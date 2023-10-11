@@ -89,6 +89,6 @@ INSERT INTO `tp_shortener` VALUES (1,'',1,'','V0N6UU','dEZMRlh','bU5ia3E0','http
 
 
 ##
- **最后呐喊:  DO NOT USE IT FOR MALICIOUS！**
+ **最后:  DO NOT USE IT FOR MALICIOUS！**
 ##
 
