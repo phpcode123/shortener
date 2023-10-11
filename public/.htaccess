@@ -1,36 +1,36 @@
 #new 注意伪静态顺序不能错乱
-rewrite ^/$ /index.php/index/index/index last;
-rewrite ^/shortener$ /index.php/index/shortener/index last;
-rewrite ^/shortener-api$ /index.php/index/shortener_api/index last;
-rewrite ^/develop$ /index.php/index/develop/index last;
-rewrite ^/shortener-batch$ /index.php/index/shortener_batch/index last;
-rewrite ^/url-click-counter$ /index.php/index/clicks/index last;
-rewrite ^/url-total-clicks$ /index.php/index/clicks/total last;
-rewrite ^/url-total-clicks-batch$ /index.php/index/clicks_batch/total last;
-rewrite ^/report-malicious-url$ /index.php/index/report_malicious_url/index last;
-rewrite ^/terms-of-service$ /index.php/index/terms_of_service/index last;
-rewrite ^/privacy-policy$ /index.php/index/privacy_policy/index last;
-rewrite ^/contact$ /index.php/index/contact/index last;
-rewrite ^/error-page$ /index.php/index/error_page/index last;
+rewrite ^/$ /index.php/index/index last;
+rewrite ^/shortener$ /index.php/shortener/index last;
+rewrite ^/shortener-api$ /index.php/shortener_api/index last;
+rewrite ^/develop$ /index.php/develop/index last;
+rewrite ^/shortener-batch$ /index.php/shortener_batch/index last;
+rewrite ^/url-click-counter$ /index.php/clicks/index last;
+rewrite ^/url-total-clicks$ /index.php/clicks/total last;
+rewrite ^/url-total-clicks-batch$ /index.php/clicks_batch/total last;
+rewrite ^/report-malicious-url$ /index.php/report_malicious_url/index last;
+rewrite ^/terms-of-service$ /index.php/terms_of_service/index last;
+rewrite ^/privacy-policy$ /index.php/privacy_policy/index last;
+rewrite ^/contact$ /index.php/contact/index last;
+rewrite ^/error-page$ /index.php/error_page/index last;
 
 #pay  --20230413
-rewrite ^/pay/index$ /index.php/index/pay/index last;
-rewrite ^/pay/usdt$ /index.php/index/usdt/pay last;
-rewrite ^/usdt/callback$ /index.php/index/usdt/callback last;
-rewrite ^/usdt/check_status$ /index.php/index/usdt/check_status last;
+rewrite ^/pay/index$ /index.php/pay/index last;
+rewrite ^/pay/usdt$ /index.php/usdt/pay last;
+rewrite ^/usdt/callback$ /index.php/usdt/callback last;
+rewrite ^/usdt/check_status$ /index.php/usdt/check_status last;
 
  
 #roblox 超过9的字符串长度用于展示tp_youtube_url视频 --20230508
-rewrite ^/roblox-search$ /index.php/index/roblox/roblox_search last;
-rewrite ^/contact-us$ /index.php/index/roblox/contact_us last;
-rewrite ^/landing$ /index.php/index/roblox/landing last;
-rewrite ^/user-login$ /index.php/index/roblox/user_login last;
-rewrite ^/user-login-post$ /index.php/index/roblox/user_login_post last;
-rewrite "^/([\w-]{9,13})$" /index.php/index/roblox/show?short_str=$1 last;
+rewrite ^/roblox-search$ /index.php/roblox/roblox_search last;
+rewrite ^/contact-us$ /index.php/roblox/contact_us last;
+rewrite ^/landing$ /index.php/roblox/landing last;
+rewrite ^/user-login$ /index.php/roblox/user_login last;
+rewrite ^/user-login-post$ /index.php/roblox/user_login_post last;
+rewrite "^/([\w-]{9,13})$" /index.php/roblox/show?short_str=$1 last;
 
 
 #shortener short_url  
-rewrite ^/(\w+)$ /index.php/index/gotourl/index?short_str=$1 last;
+rewrite ^/(\w+)$ /index.php/gotourl/index?short_str=$1 last;
 
 #增加google adsense ads.txt伪静态 --20230205
-rewrite ^/ads.txt$ /index.php/index/adstxt/index last;
+rewrite ^/ads.txt$ /index.php/adstxt/index last;
