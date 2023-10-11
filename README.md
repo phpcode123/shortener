@@ -83,7 +83,8 @@ INSERT INTO `tp_shortener` VALUES (1,'',1,'','V0N6UU','dEZMRlh','bU5ia3E0','http
 * 程序只带来了$7500刀的adsense收益，因流量较小一直未达到盈利预期，后期本应持续迭代的功能都停了。大家后期流量做起来了可以联系我二开。
 
 * 程序使用方法一会儿也写不完，大家自己慢慢探索。
-
+* Google Adsense收益截图
+![](/public/static/images/adsense.png)
 
 
 
