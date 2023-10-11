@@ -8,8 +8,7 @@
 
 3、软件系免费分享，项目也只适用于国外英文项目，请大家勿要在国内瞎搞，出事后果自担。
 
-   QQ：12391046  E-Mail：petersonjames5838@gmail.com
-
+   
 ## 技术相关
 
 * 环境：linux + nginx + mysql + php + redis
@@ -85,7 +84,6 @@ INSERT INTO `tp_shortener` VALUES (1,'',1,'','V0N6UU','dEZMRlh','bU5ia3E0','http
 * 程序使用方法一会儿也写不完，大家自己慢慢探索。
 * Google Adsense收益截图  
 
-![](/public/static/images/adsense.png)
 
 
 
