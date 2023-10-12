@@ -97,6 +97,6 @@ INSERT INTO `tp_shortener` VALUES (1,'',1,'','V0N6UU','dEZMRlh','bU5ia3E0','http
 ![](/public/static/images/5.png)
 
 ##
- **<font color="#660000">DO NOT USE IT FOR MALICIOUS！</font>**
+ **<font color=Red>DO NOT USE IT FOR MALICIOUS！</font>**
 ##
 
