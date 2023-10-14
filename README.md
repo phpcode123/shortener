@@ -86,9 +86,11 @@ INSERT INTO `tp_shortener` VALUES (1,'',1,'','V0N6UU','dEZMRlh','bU5ia3E0','http
 ![adsense](/public/static/images/adsense.png)
 
 ## 程序界面截图
+* 项目地址：[https://m5.gs](https://m5.gs/)  
+
 * 前台首页  
 
-![index](/public/static/images/1.png)
+![](/public/static/images/index.gif)
 
 * 后台部分截图  
 
